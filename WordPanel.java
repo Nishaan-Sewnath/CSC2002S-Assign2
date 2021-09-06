@@ -34,8 +34,8 @@ public class WordPanel extends JPanel implements Runnable {
 		    	//g.drawString(words[i].getWord(),words[i].getX(),words[i].getY());	
 		    	g.drawString(words[i].getWord(),words[i].getX(),words[i].getY()+20);	//y-offset for skeleton so that you can see the words	
 		   	//words[i].setPos(words[i].getX(), words[i].getY());
-			//repaint();
-			//validate();
+			repaint();
+			validate();
 
 		    }
 
@@ -44,24 +44,34 @@ public class WordPanel extends JPanel implements Runnable {
 		
 		WordPanel(WordRecord[] words, int maxY) {
 			this.words=words; //will this work?
+			//super(words) = words;
 			noWords = words.length;
 			done=false;
 			this.maxY=maxY;		
 		}
 
 
-
+		@Override
 		public void run() {
 			//add in code to animate this
 			while(done == true){
-				
-				for(int j =0; j<noWords;j++){
+				repaint();
+				for(int j = 0 ; j<noWords;j++){
 					words[j].drop(words[j].getSpeed());
 					words[j].setPos(words[j].getX(), words[j].getY());
+					
+					if(words[j].dropped()){
+
+						
+
+					}
+					repaint();
+					validate();
 	
 				}
-				//repaint();
-				//validate();
+
+				//JPanel.repaint();
+				//JPanel.validate();
 				
 			}
 

@@ -63,6 +63,7 @@ public class WordApp{
 	      public void actionPerformed(ActionEvent evt) {
 	         String text = textEntry.getText();
 	         //[snip]
+		 //resetWords(words, x_inc);
 		 for(int i =0; i<noWords; i++){
 		 	if(words[i].matchWord(text)){
 
@@ -96,6 +97,7 @@ public class WordApp{
 		   {
 		      //[snip]
 		      //w = new WordPanel(words, );
+		      resetWords(words, x_inc);
 		      score.resetScore();
 		      caught.setText("Caught: "+ score.getCaught()+" ");
 		      missed.setText("Missed: "+score.getMissed()+" ");

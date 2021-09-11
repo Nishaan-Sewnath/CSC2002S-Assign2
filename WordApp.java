@@ -203,6 +203,7 @@ public class WordApp{
 		
 
 		//WordPanel wp = new WordPanel();
+		//testing
 		Thread ts[] = new Thread[noWords];
 		for(int b = 0; b<noWords; b++){
 
